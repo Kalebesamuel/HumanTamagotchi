@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">HumanTamagotchiApp</string>
+    <string name="button_login">Login</string>
+    <string name="label_login">Login</string>
+    <string name="label_senha">Senha</string>
+    <string name="label_nome">Login</string>
+    <string name="label_dataNascimento">Login</string>
+    <string name="label_peso">Login</string>
+    <string name="header_primeiroSlide">Alimentação Saúdavel</string>
+    <string name="header_segundoSlide">Compartilhamento</string>
+    <string name="header_terceiroSlide">Reeducação alimentar</string>
+    <string name="desc_primerioSlide">Nós te ajudaremos a obter uma alimentação muito mais saúdavel</string>
+    <string name="desc_segundoSlide">Crie quantos personagens quiser e compartilhe com toda a sua família e amigos</string>
+    <string name="desc_terceiroSlide">Defina uma dieta e ative as notificaçõe e nós te lembraremos de cumpri-lá todo dia</string>
+
+
+</resources>

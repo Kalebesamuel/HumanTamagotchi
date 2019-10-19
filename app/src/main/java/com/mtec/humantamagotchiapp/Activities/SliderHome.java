@@ -79,7 +79,7 @@ public class SliderHome extends PagerAdapter {
 
         container.addView(view);
 
-        return  view;
+        return view;
     }
 
     @Override

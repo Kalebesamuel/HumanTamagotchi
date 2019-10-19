@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "5919236174",
+    "firebase_url": "https://humantamagotchi-b818c.firebaseio.com",
+    "project_id": "humantamagotchi-b818c",
+    "storage_bucket": "humantamagotchi-b818c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5919236174:android:42af5854868f7ef5f8631f",
+        "android_client_info": {
+          "package_name": "com.mtec.humantamagotchiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5919236174-23j9sd18u7826r9a6ve8dv9lbpqtbq1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mtec.humantamagotchiapp",
+            "certificate_hash": "93c68c9c1317508c5157fffbdc3fbf50aa8c78cc"
+          }
+        },
+        {
+          "client_id": "5919236174-o60vvvmg3q5a05iss5jd5bet3dbmqir9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB59wXdhnvl6YTuikTRkrNMnwtieycVBpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5919236174-o60vvvmg3q5a05iss5jd5bet3dbmqir9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

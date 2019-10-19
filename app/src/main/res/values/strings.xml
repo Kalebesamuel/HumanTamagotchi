@@ -12,6 +12,17 @@
     <string name="desc_primerioSlide">Nós te ajudaremos a obter uma alimentação muito mais saúdavel</string>
     <string name="desc_segundoSlide">Crie quantos personagens quiser e compartilhe com toda a sua família e amigos</string>
     <string name="desc_terceiroSlide">Defina uma dieta e ative as notificaçõe e nós te lembraremos de cumpri-lá todo dia</string>
+    <string name="data_de_nascimento">Data de Nascimento</string>
+    <string name="preencha_os_dados_abaixo_para_definirmos_o_seu_perfil">Preencha os dados abaixo para definirmos o seu perfil</string>
+    <string name="sexo">Sexo</string>
+    <string name="peso">Peso</string>
+    <string name="altura">Altura</string>
+    <string name="nome">Nome</string>
+    <string name="m">M</string>
+    <string name="f">F</string>
+    <string name="_00_00">00,00</string>
+    <string name="pr_ximo">Próximo</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

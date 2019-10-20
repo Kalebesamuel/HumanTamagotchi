@@ -6,6 +6,7 @@ package Classes;
 
 public class User {
 
+
     private String nome;
     private String email;
     private int dataNascimento;

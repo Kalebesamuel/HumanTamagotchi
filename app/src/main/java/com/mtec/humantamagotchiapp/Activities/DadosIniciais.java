@@ -1,20 +1,34 @@
 package com.mtec.humantamagotchiapp.Activities;
 
 import androidx.activity.ComponentActivity;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 import com.google.android.material.textfield.TextInputEditText;
 import com.mtec.humantamagotchiapp.R;
+
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import Classes.DataBase;
+import Classes.User;
 
 
 public class DadosIniciais extends AppCompatActivity {
@@ -25,6 +39,11 @@ public class DadosIniciais extends AppCompatActivity {
     EditText dtNascimento;
     RadioGroup radioGroupSexo;
     Button bt_NextScreen;
+    Calendar calendar = Calendar.getInstance();
+    Date date = null;
+    DatePickerDialog datePickerDialog;
+    DataBase db;
+    //AlertDialog alert;
 
 //================================================================================================================================================
 
@@ -35,11 +54,33 @@ public class DadosIniciais extends AppCompatActivity {
 
          nome = findViewById(R.id.inputName);
          peso = findViewById(R.id.inputPeso);
-         altura =  findViewById(R.id.inputAltura);
+         altura
+                 =  findViewById(R.id.inputAltura);
          dtNascimento = findViewById(R.id.inputData);
          radioGroupSexo = findViewById(R.id.radioGroupSexo);
          bt_NextScreen = findViewById(R.id.bt_EnviarDadosIniciais);
          mask();
+
+
+         datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+             @Override
+             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                 Calendar selectDate = Calendar.getInstance();
+                 selectDate.set(year, month, day);
+                 date = selectDate.getTime();
+                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                 dtNascimento.setText(sdf.format(date));
+             }
+         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+
+         dtNascimento.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 datePickerDialog.show();
+             }
+         });
+
+         db = Room.databaseBuilder(this, DataBase.class, "dbHT").build();
 
 
          bt_NextScreen.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +88,24 @@ public class DadosIniciais extends AppCompatActivity {
              public void onClick(View view) {
 
                   if(!valida(findViewById(R.id.parent))){
-                      //chama próxima tela
-                  } else{
-                      //informa o usuário sobre os campos vazios
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            User user = new User(0, nome.getText().toString(), date,
+                                    Double.parseDouble(peso.getText().toString()),//erro no parseDouble
+                                    Double.parseDouble(altura.getText().toString()));
+                            db.userDao().insert(user);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(DadosIniciais.this, "Salvo com Sucesso", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                        }
+                    });
+
+                      callNextPage();
                   }
              }
          });
@@ -89,18 +145,25 @@ public class DadosIniciais extends AppCompatActivity {
             View view = parent.getChildAt(i);
             if(view instanceof EditText || view instanceof TextInputEditText){
                 String text = ((EditText)view).getText().toString();
-                if( text == null || text.equals("")){
+                if( text == null || text.isEmpty()){
                     isEmpty = true;
                     Log.w("TAG", "Algum campo de texto está vazio.");
+                } else {
+                    isEmpty = false;
                 }
             }
 
             if(view instanceof RadioGroup){
                 int checked = 0;
                 checked = ((RadioGroup) view).getCheckedRadioButtonId();
-                if(checked != 0){
+                Log.w("TAG", "checked: " + checked);
+                Log.w("TAG", "id: " + R.id.rB_M);
+
+                if(checked == -1){// validar aquic
                     isRadioButtonSelected = true;
                     Log.w("TAG", "Algum radioButton deve ser marcado");
+                } else {
+                    isRadioButtonSelected = false;
                 }
             }
         }
@@ -130,5 +193,10 @@ public class DadosIniciais extends AppCompatActivity {
     }
 
 //================================================================================================================================================
+public void callNextPage(){
+        Intent intent = new Intent(this, Opcao.class);
+        startActivity(intent);
+    }
 
+//================================================================================================================================================
 }

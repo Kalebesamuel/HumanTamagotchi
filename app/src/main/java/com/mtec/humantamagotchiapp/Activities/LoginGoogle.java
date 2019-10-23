@@ -106,7 +106,7 @@ public class LoginGoogle extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
                 Log.d("TAG", "Signin Success");
                 FirebaseUser user = mAuth.getCurrentUser();
-                Toast.makeText(this, "Bem Vindo " + user.getDisplayName(), Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "Bem Vindo " + user.getDisplayName(), Toast.LENGTH_SHORT);
                 callDadosIniciaisScreen();
 //                updateUI(user);//não será chamado
             } else {

@@ -10,11 +10,11 @@
 
     <Button
         android:id="@+id/bt_Logout"
-        android:layout_width="366dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="356dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/buttonsymbol"
         android:text="@string/logout"
@@ -23,19 +23,16 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoLogin"
         app:layout_constraintVertical_bias="0.857" />
 
     <ImageView
         android:id="@+id/logoHT"
-        android:layout_width="411dp"
-        android:layout_height="0dp"
+        android:layout_width="419dp"
+        android:layout_height="129dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="309dp"
-        app:layout_constraintBottom_toTopOf="@+id/infoLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +41,11 @@
 
     <Button
         android:id="@+id/bt_SignIn"
-        android:layout_width="366dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="356dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/buttonsymbol"
         android:text="@string/button_login"
@@ -56,23 +53,23 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoLogin"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.891" />
 
     <ImageView
         android:id="@+id/photoUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@color/colorAccent"
+        android:layout_width="234dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/user_icon"
         android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoHT"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/logoHT" />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -108,7 +108,7 @@ public class LoginGoogle extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 Toast.makeText(this, "Bem Vindo " + user.getDisplayName(), Toast.LENGTH_SHORT);
                 callDadosIniciaisScreen();
-                updateUI(user);//não será chamado
+//                updateUI(user);//não será chamado
             } else {
 
                 progressBar.setVisibility(View.INVISIBLE);
@@ -128,7 +128,7 @@ public class LoginGoogle extends AppCompatActivity {
 
             String name = user.getDisplayName();
             String email = user.getEmail();
-            String photo = String.valueOf(user.getPhotoUrl());
+            String photo = String.valueOf(user.getPhotoUrl());//photo vai entrar na page de configurações
 
             text.append("info: \n");
             text.append(name + "\n");
@@ -141,7 +141,7 @@ public class LoginGoogle extends AppCompatActivity {
         } else {
 
             text.setText("");
-            Picasso.get().load(R.drawable.comidasaudavel).into(image);//mudar imagem aqui dps
+            Picasso.get().load(R.drawable.user_icon).into(image);
             btn_login.setVisibility(View.VISIBLE);
             btn_logout.setVisibility(View.INVISIBLE);
 

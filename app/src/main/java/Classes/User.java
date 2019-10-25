@@ -1,5 +1,7 @@
 package Classes;
 
+import java.sql.Date;
+
 /**Classe para armazenar e tratar dados do usuário, como autenticação,
  * será usado Google Authentication, porém o usuário também poderá criar sua conta.
  */
@@ -8,8 +10,7 @@ public class User {
 
 
     private String nome;
-    private String email;
-    private int dataNascimento;
+    private Date dataNascimento;
     private double peso;
     private double altura;
 
@@ -17,9 +18,8 @@ public class User {
 
     }
 
-    public User(String nome, String email, int dataNascimento, double peso, double altura) {
+    public User(String nome, Date dataNascimento, double peso, double altura) {
         this.nome = nome;
-        this.email = email;
         this.dataNascimento = dataNascimento;
         this.peso = peso;
         this.altura = altura;
@@ -33,19 +33,11 @@ public class User {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(int dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

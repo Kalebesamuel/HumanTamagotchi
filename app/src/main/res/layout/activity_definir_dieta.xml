@@ -4,6 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.DefinirDieta">
+    tools:context=".Activities.Pesquisa">
+
+    <TextView
+        android:id="@+id/TxtSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:text="Sexo: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResponda" />
+
+    <TextView
+        android:id="@+id/txtResponda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Responda as Perguntas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/sexo"
+        android:layout_width="113dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/TxtSexo"
+        app:layout_constraintStart_toEndOf="@+id/TxtSexo"
+        app:layout_constraintTop_toTopOf="@+id/TxtSexo">
+
+        <RadioButton
+            android:id="@+id/sexoM"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="M" />
+
+        <RadioButton
+            android:id="@+id/sexoF"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:text="F" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Altura:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtSexo" />
+
+    <EditText
+        android:id="@+id/Altura"
+        android:layout_width="99dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAltura"
+        app:layout_constraintTop_toTopOf="@+id/txtAltura"
+        tools:layout_editor_absoluteX="114dp" />
+
+    <TextView
+        android:id="@+id/txtIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Idade:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="30dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/txtIdade"
+        app:layout_constraintStart_toEndOf="@+id/txtIdade"
+        app:layout_constraintTop_toTopOf="@+id/txtIdade" />
+
+    <TextView
+        android:id="@+id/txtAttFis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Atividade Física:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIdade" />
+
+    <Spinner
+        android:id="@+id/attFisica"
+        android:layout_width="199dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAttFis"
+        app:layout_constraintStart_toEndOf="@+id/txtAttFis"
+        app:layout_constraintTop_toTopOf="@+id/txtAttFis" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
